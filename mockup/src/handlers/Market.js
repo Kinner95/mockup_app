@@ -57,6 +57,23 @@ export default class Market extends Component {
     });
   }
 
+  async searchItemList(filterKey) {
+    if (filterKey != "") {
+      let ori_list = this.state.itemList;
+      let filter_array = ori_list.filter((data) => {
+        return data.displayname.includes(filterKey);
+      });
+      this.setState({
+        itemList: filter_array,
+      });
+    } else {
+      let retrive = JSON.parse(await AsyncStorage.getItem("marketItemList"));
+      this.setState({
+        itemList: retrive,
+      });
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -85,7 +102,7 @@ export default class Market extends Component {
                 placeholder="Search"
                 placeholderTextColor="#793d6f"
                 leftIcon={{ type: "MaterialIcons", name: "search" }}
-                onChangeText={(value) => this.setState({ search: value })}
+                onChangeText={(value) => this.searchItemList(value)}
                 containerStyle={{ maxHeight: 50 }}
                 inputContainerStyle={{
                   borderBottomWidth: 0,
