@@ -1,75 +1,76 @@
 /* eslint-disable no-unused-vars */
-import React, { Component } from 'react'
-import LinearGradient from 'react-native-linear-gradient'
-import { Button } from 'react-native-elements'
-import { StyleSheet, StatusBar, View, Text } from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import React, { Component } from "react";
+import LinearGradient from "react-native-linear-gradient";
+import { Button } from "react-native-elements";
+import { StyleSheet, StatusBar, View, Text } from "react-native";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default class Walkthrough extends Component {
-  render () {
+  render() {
     return (
       <LinearGradient
-        colors={['#febd23', '#f16d25']}
+        colors={["#febd23", "#f16d25"]}
         style={styles.linearGradient}
       >
-        <StatusBar translucent={true} backgroundColor={'transparent'} />
+        <StatusBar translucent={true} backgroundColor={"transparent"} />
         <View style={styles.mainView}>
           <View
-            style={{ flex: 3, justifyContent: 'center', alignItems: 'center' }}
+            style={{ flex: 3, justifyContent: "center", alignItems: "center" }}
           >
             <Text
               style={{
-                color: '#fff',
-                fontWeight: 'bold',
+                color: "#fff",
+                fontWeight: "bold",
                 fontSize: 35,
-                textAlign: 'center',
-                marginVertical: 60
+                textAlign: "center",
+                marginVertical: 60,
               }}
             >
               ONLINE FUNITURE STORE
             </Text>
-            <Icon name="sofa" style={{ fontSize: 200, color: '#fff' }} />
+            <Icon name="sofa" style={{ fontSize: 200, color: "#fff" }} />
           </View>
           <View
             style={{
               flex: 1.5,
-              justifyContent: 'center',
-              alignItems: 'center'
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <Button
               title="Get Started"
               buttonStyle={{
-                backgroundColor: '#fff',
+                backgroundColor: "#fff",
                 borderRadius: 70,
                 minHeight: 70,
-                paddingHorizontal: 50
+                paddingHorizontal: 50,
               }}
-              titleStyle={{ color: '#793d6f', fontSize: 30 }}
+              titleStyle={{ color: "#793d6f", fontSize: 30 }}
               containerStyle={{
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginBottom: 45
+                justifyContent: "center",
+                alignItems: "center",
+                marginBottom: 45,
               }}
-              onPress={() => this.props.navigation.navigate('Login')}
+              onPress={() => this.props.navigation.navigate("Market")}
             />
-            <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 20 }}>
+            <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 20 }}>
               Dont have account?
             </Text>
             <Text
               style={{
-                textDecorationLine: 'underline',
-                color: '#fff',
-                fontWeight: 'bold',
-                fontSize: 20
+                textDecorationLine: "underline",
+                color: "#fff",
+                fontWeight: "bold",
+                fontSize: 20,
               }}
+              onPress={() => this.props.navigation.navigate("Login")}
             >
               Sing in here
             </Text>
           </View>
         </View>
       </LinearGradient>
-    )
+    );
   }
 }
 
@@ -77,11 +78,11 @@ const styles = StyleSheet.create({
   linearGradient: {
     flex: 1,
     paddingLeft: 10,
-    paddingRight: 10
+    paddingRight: 10,
   },
   mainView: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-})
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});

@@ -16,7 +16,7 @@ export default class Login extends Component {
     super(props);
     let initUser = JSON.stringify([
       {
-        username: "road",
+        username: "Road",
         password: 123,
       },
     ]);
@@ -41,7 +41,7 @@ export default class Login extends Component {
         data.username == param.PhoneNo && data.password == param.Password
     );
     if (valid) {
-      this.props.navigation.navigate("Home");
+      this.props.navigation.navigate("Profile");
     } else {
       Alert.alert(
         "Login Failed",
