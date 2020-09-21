@@ -1,5 +1,11 @@
-import {Navigation} from 'react-native-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import Walkthrough from './handlers/Walkthrough'
 
-export function registerScreens() {
-  Navigation.registerComponent('Walkthrough', () => require('./handlers/Walkthrough').default);
-}
+export default AppNavigator = createStackNavigator(
+  {
+    Home: Walkthrough,
+  },
+  {
+    initialRouteName: 'Home',
+  }
+);
