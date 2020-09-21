@@ -41,7 +41,9 @@ export default class Login extends Component {
         data.username == param.PhoneNo && data.password == param.Password
     );
     if (valid) {
-      this.props.navigation.navigate("Profile");
+      let str_valid = JSON.stringify(valid);
+      await AsyncStorage.setItem("selectedUser", str_valid);
+      this.props.navigation.navigate("Market");
     } else {
       Alert.alert(
         "Login Failed",

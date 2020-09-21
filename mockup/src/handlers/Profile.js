@@ -7,21 +7,16 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default class Profile extends Component {
-  constructor(props) {
-    super(props);
-    let initUser = JSON.stringify([
-      {
-        username: "Road",
-        password: 123,
-      },
-    ]);
-    AsyncStorage.setItem("user", initUser);
-  }
   state = {
-    selected: "Login",
-    PhoneNo: null,
-    Password: null,
+    selectedUser: { username: "UserName", password: "123" },
   };
+
+  async componentDidMount() {
+    let retrive = JSON.parse(await AsyncStorage.getItem("selectedUser"));
+    this.setState({
+      selectedUser: retrive,
+    });
+  }
 
   render() {
     return (
@@ -50,7 +45,9 @@ export default class Profile extends Component {
             <Text style={{ fontSize: 25, color: "black" }}>Your Name</Text>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Ionicons name="location" style={{ color: "#f48f7f" }} />
-              <Text style={{ fontSize: 15 }}>UserName</Text>
+              <Text style={{ fontSize: 15 }}>
+                {this.state.selectedUser.username}
+              </Text>
             </View>
             <View
               style={{

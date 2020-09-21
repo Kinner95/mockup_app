@@ -122,7 +122,6 @@ export default class Market extends Component {
               this.state.itemList.map((data, index) => {
                 return (
                   <View style={styles.Card} key={index}>
-                    {console.log("idx: ", index)}
                     <View
                       style={[
                         {

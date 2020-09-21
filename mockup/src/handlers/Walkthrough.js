@@ -51,7 +51,7 @@ export default class Walkthrough extends Component {
                 alignItems: "center",
                 marginBottom: 45,
               }}
-              onPress={() => this.props.navigation.navigate("Market")}
+              onPress={() => this.props.navigation.navigate("Login")}
             />
             <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 20 }}>
               Dont have account?
